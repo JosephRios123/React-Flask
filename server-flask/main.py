@@ -1,5 +1,5 @@
 from flask import Flask
-from flask-cors import CORS
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
@@ -11,11 +11,15 @@ def hello_world():
 @app.route('/api/users')
 def get_users():
     return {
-        'users': ['Jose', 'Nelida', 'Carlos']
+        'users': [
+            {'id': 1, 'name': 'Alice'},
+            {'id': 2, 'name': 'Bob'},
+            {'id': 3, 'name': 'Charlie'}
+        ]
     }
 
 @app.route('/api/fruits')
-def get_users():
+def get_fruits():
     return ['Aguacate', 'Pera', 'Manzana']
 
 if __name__ == '__main__':
